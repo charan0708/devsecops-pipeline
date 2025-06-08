@@ -120,6 +120,12 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           load: true
+
+      - name: Set up Trivy
+        uses: aquasecurity/setup-trivy@v0.13.0
+
+      - name: Add Trivy to PATH
+        run: echo "$HOME/.local/bin/trivy-bin" >> $GITHUB_PATH    
       
      # - name: Run Trivy vulnerability scanner
      #   uses: aquasecurity/trivy-action@master
