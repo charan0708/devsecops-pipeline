@@ -134,7 +134,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         env:
           TRIVY_DISABLE_VEX_NOTICE: true
-        run: trivy image ghcr.io/your-org/your-image:tag
+        run: trivy image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
     
       
       - name: Push Docker image
