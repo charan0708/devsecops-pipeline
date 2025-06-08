@@ -130,6 +130,12 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
+          
+      - name: Run Trivy vulnerability scanner
+        env:
+          TRIVY_DISABLE_VEX_NOTICE: true
+        run: trivy image ghcr.io/your-org/your-image:tag
+    
       
       - name: Push Docker image
         uses: docker/build-push-action@v5
