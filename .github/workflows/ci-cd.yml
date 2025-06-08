@@ -122,7 +122,7 @@ jobs:
           load: true
 
       - name: Set up Trivy
-        uses: aquasecurity/setup-trivy@v0.13.0
+        uses: aquasecurity/setup-trivy@ff1b8b060f23b650436d419b5e13f67f5d4c3087
 
       - name: Add Trivy to PATH
         run: echo "$HOME/.local/bin/trivy-bin" >> $GITHUB_PATH    
